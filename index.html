@@ -6,33 +6,41 @@
 <title>Arnav Layer Tech 3D</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
 background:#f4f7fb;
 color:#222;
+line-height:1.6;
 }
 
 header{
 background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
 color:white;
-padding:100px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
+.logo{
+width:180px;
+border-radius:50%;
+margin-bottom:20px;
+box-shadow:0 0 25px rgba(255,255,255,0.25);
+}
+
 header h1{
-font-size:3.5rem;
-margin-bottom:15px;
+font-size:3rem;
+margin-bottom:10px;
 }
 
 header p{
-font-size:1.3rem;
+font-size:1.2rem;
 max-width:700px;
 margin:auto;
 margin-bottom:25px;
@@ -40,11 +48,11 @@ margin-bottom:25px;
 
 .btn{
 display:inline-block;
-padding:15px 30px;
+padding:14px 28px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
-margin:10px;
+margin:8px;
 transition:.3s;
 }
 
@@ -63,23 +71,22 @@ transform:translateY(-3px);
 }
 
 .section{
+padding:70px 20px;
 max-width:1200px;
 margin:auto;
-padding:80px 20px;
 }
 
 .section h2{
 text-align:center;
-font-size:2.5rem;
-margin-bottom:20px;
+margin-bottom:25px;
+font-size:2.4rem;
 color:#0f172a;
 }
 
-.section p{
+.about{
 text-align:center;
-max-width:800px;
+max-width:850px;
 margin:auto;
-line-height:1.8;
 }
 
 .services{
@@ -91,9 +98,9 @@ margin-top:40px;
 
 .card{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 transition:.3s;
 }
 
@@ -102,35 +109,41 @@ transform:translateY(-8px);
 }
 
 .card h3{
-margin-bottom:15px;
+margin-bottom:10px;
 color:#1e3a8a;
 }
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 margin-top:40px;
 }
 
-.gallery img{
-width:100%;
-height:280px;
-object-fit:cover;
+.gallery-item{
+background:white;
+padding:15px;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.gallery h3{
-margin-top:10px;
+.gallery-item img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.gallery-item h3{
 text-align:center;
+margin-top:10px;
 }
 
 .contact{
 background:#0f172a;
 color:white;
-padding:70px 20px;
 text-align:center;
+padding:60px 20px;
 }
 
 .contact a{
@@ -154,8 +167,8 @@ background:#25D366;
 color:white;
 padding:15px 18px;
 border-radius:50px;
+font-size:22px;
 text-decoration:none;
-font-size:20px;
 box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
@@ -165,14 +178,16 @@ header h1{
 font-size:2.2rem;
 }
 
-header p{
-font-size:1rem;
+.logo{
+width:140px;
 }
 
 .section h2{
 font-size:2rem;
 }
+
 }
+
 </style>
 </head>
 
@@ -180,19 +195,20 @@ font-size:2rem;
 
 <header>
 
+<img src="logo.png" alt="Arnav Layer Tech 3D" class="logo">
+
 <h1>Arnav Layer Tech 3D</h1>
 
 <p>
-Bring Your Imagination to Life with Custom 3D Printed Avatars,
-Keychains, Personalized Gifts, Home Décor and Corporate Products.
+Customize Anything You Imagine. We transform your ideas into reality with premium 3D printed avatars, personalized gifts, custom keychains, lithophanes, and modern home décor.
 </p>
 
-<a href="https://wa.me/918375869076" class="btn whatsapp">
-Order on WhatsApp
+<a href="https://wa.me/918375869076" class="btn whatsapp" target="_blank">
+📱 Order on WhatsApp
 </a>
 
-<a href="https://www.instagram.com/arnav_layertech_3d/" class="btn instagram">
-View Our Work
+<a href="https://www.instagram.com/arnav_layertech_3d/" class="btn instagram" target="_blank">
+📸 Instagram
 </a>
 
 </header>
@@ -201,9 +217,9 @@ View Our Work
 
 <h2>About Us</h2>
 
-<p>
-At Arnav Layer Tech 3D, we transform your ideas into unique creations using advanced 3D printing technology. From custom avatars and keychains to personalized gifts and elegant home décor, every product is crafted with creativity, precision, and attention to detail.
-</p>
+<div class="about">
+At Arnav Layer Tech 3D, we specialize in creating unique and customized 3D printed products tailored to your imagination. From personalized avatars and gifts to home décor and corporate branding solutions, we bring creativity and innovation together to create memorable products.
+</div>
 
 </section>
 
@@ -215,22 +231,22 @@ At Arnav Layer Tech 3D, we transform your ideas into unique creations using adva
 
 <div class="card">
 <h3>🎭 3D Avatars</h3>
-<p>Custom miniatures and avatar models created from photos and concepts.</p>
+<p>Custom-designed avatars and miniature figures created from your ideas and photos.</p>
 </div>
 
 <div class="card">
 <h3>🔑 Personalized Keychains</h3>
-<p>Unique keychains featuring names, logos, avatars, and creative designs.</p>
+<p>Creative keychains featuring names, logos, avatars, and unique designs.</p>
 </div>
 
 <div class="card">
 <h3>🎁 Customized Gifts</h3>
-<p>Perfect gifts for birthdays, anniversaries, weddings, and special moments.</p>
+<p>Perfect personalized gifts for birthdays, anniversaries, and special occasions.</p>
 </div>
 
 <div class="card">
 <h3>🏠 Home Décor</h3>
-<p>Stylish decorative items, lithophanes, planters, and customized pieces.</p>
+<p>Modern decorative items, lithophanes, planters, and custom display pieces.</p>
 </div>
 
 </div>
@@ -239,38 +255,38 @@ At Arnav Layer Tech 3D, we transform your ideas into unique creations using adva
 
 <section class="section">
 
-<h2>Our Artwork Gallery</h2>
+<h2>Our Artwork</h2>
 
 <div class="gallery">
 
-<div>
-<img src="avatar1.jpg" alt="3D Avatar">
+<div class="gallery-item">
+<img src="avatar.jpg" alt="">
 <h3>3D Avatar</h3>
 </div>
 
-<div>
-<img src="gift.jpg" alt="Custom Gift">
-<h3>Customized Gifts</h3>
+<div class="gallery-item">
+<img src="gift.jpg" alt="">
+<h3>Personalized Gift</h3>
 </div>
 
-<div>
-<img src="keychain.jpg" alt="Keychain">
-<h3>Custom Keychains</h3>
+<div class="gallery-item">
+<img src="keychain.jpg" alt="">
+<h3>Custom Keychain</h3>
 </div>
 
-<div>
-<img src="decor.jpg" alt="Home Decor">
+<div class="gallery-item">
+<img src="decor.jpg" alt="">
 <h3>Home Décor</h3>
 </div>
 
-<div>
-<img src="lithophane.jpg" alt="Lithophane">
+<div class="gallery-item">
+<img src="lithophane.jpg" alt="">
 <h3>Lithophane Art</h3>
 </div>
 
-<div>
-<img src="avatar2.jpg" alt="Personalized Avatar">
-<h3>Premium Avatar Designs</h3>
+<div class="gallery-item">
+<img src="avatar2.jpg" alt="">
+<h3>Premium Avatar Design</h3>
 </div>
 
 </div>
@@ -299,14 +315,10 @@ At Arnav Layer Tech 3D, we transform your ideas into unique creations using adva
 </section>
 
 <footer>
-
 © 2026 Arnav Layer Tech 3D | Customize Anything You Imagine
-
 </footer>
 
-<a class="whatsapp-float"
-href="https://wa.me/918375869076"
-target="_blank">
+<a href="https://wa.me/918375869076" class="whatsapp-float" target="_blank">
 💬
 </a>
 
