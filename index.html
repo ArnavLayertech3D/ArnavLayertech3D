@@ -6,86 +6,84 @@
 <title>Arnav Layer Tech 3D</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f4f7fb;
+background:#f4f6f9;
 color:#222;
-line-height:1.6;
 }
 
-header{
+.hero{
 background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
 color:white;
-padding:80px 20px;
 text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:3.5rem;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:1.2rem;
+line-height:1.8;
+margin-bottom:25px;
 }
 
 .logo{
 width:180px;
+height:180px;
 border-radius:50%;
+object-fit:cover;
 margin-bottom:20px;
-box-shadow:0 0 25px rgba(255,255,255,0.25);
-}
-
-header h1{
-font-size:3rem;
-margin-bottom:10px;
-}
-
-header p{
-font-size:1.2rem;
-max-width:700px;
-margin:auto;
-margin-bottom:25px;
+border:4px solid rgba(255,255,255,0.2);
 }
 
 .btn{
 display:inline-block;
 padding:14px 28px;
+margin:10px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
-margin:8px;
-transition:.3s;
+color:white;
 }
 
 .whatsapp{
 background:#25D366;
-color:white;
 }
 
 .instagram{
 background:#E1306C;
-color:white;
-}
-
-.btn:hover{
-transform:translateY(-3px);
 }
 
 .section{
-padding:70px 20px;
+padding:80px 20px;
 max-width:1200px;
 margin:auto;
 }
 
 .section h2{
 text-align:center;
-margin-bottom:25px;
-font-size:2.4rem;
-color:#0f172a;
+font-size:2.5rem;
+margin-bottom:30px;
+color:#071330;
 }
 
 .about{
 text-align:center;
-max-width:850px;
+font-size:18px;
+line-height:1.8;
+max-width:900px;
 margin:auto;
 }
 
@@ -100,12 +98,7 @@ margin-top:40px;
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 .card h3{
@@ -115,32 +108,32 @@ color:#1e3a8a;
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 margin-top:40px;
 }
 
 .gallery-item{
 background:white;
-padding:15px;
 border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 .gallery-item img{
 width:100%;
-height:260px;
+height:320px;
 object-fit:cover;
-border-radius:10px;
+display:block;
 }
 
 .gallery-item h3{
+padding:15px;
 text-align:center;
-margin-top:10px;
 }
 
 .contact{
-background:#0f172a;
+background:#071330;
 color:white;
 text-align:center;
 padding:60px 20px;
@@ -149,7 +142,6 @@ padding:60px 20px;
 .contact a{
 color:white;
 text-decoration:none;
-font-weight:bold;
 }
 
 footer{
@@ -161,64 +153,65 @@ padding:20px;
 
 .whatsapp-float{
 position:fixed;
-right:20px;
 bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
+font-size:24px;
 padding:15px 18px;
-border-radius:50px;
-font-size:22px;
+border-radius:50%;
 text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
 @media(max-width:768px){
 
-header h1{
-font-size:2.2rem;
+.hero h1{
+font-size:2.3rem;
 }
 
 .logo{
-width:140px;
+width:130px;
+height:130px;
 }
 
 .section h2{
 font-size:2rem;
 }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<header>
+<section class="hero">
 
-<img src="logo.png" alt="Arnav Layer Tech 3D" class="logo">
+<!-- Replace logo.jpeg with your actual logo filename -->
+<img src="logo.jpeg" class="logo" alt="Arnav Layer Tech 3D">
 
 <h1>Arnav Layer Tech 3D</h1>
 
 <p>
-Customize Anything You Imagine. We transform your ideas into reality with premium 3D printed avatars, personalized gifts, custom keychains, lithophanes, and modern home décor.
+Customize Anything You Imagine. We create premium 3D printed avatars,
+personalized gifts, custom keychains, lithophanes and unique home décor products.
 </p>
 
-<a href="https://wa.me/918375869076" class="btn whatsapp" target="_blank">
+<a href="https://wa.me/918375869076" class="btn whatsapp">
 📱 Order on WhatsApp
 </a>
 
-<a href="https://www.instagram.com/arnav_layertech_3d/" class="btn instagram" target="_blank">
+<a href="https://www.instagram.com/arnav_layertech_3d/" class="btn instagram">
 📸 Instagram
 </a>
 
-</header>
+</section>
 
 <section class="section">
 
 <h2>About Us</h2>
 
 <div class="about">
-At Arnav Layer Tech 3D, we specialize in creating unique and customized 3D printed products tailored to your imagination. From personalized avatars and gifts to home décor and corporate branding solutions, we bring creativity and innovation together to create memorable products.
+At Arnav Layer Tech 3D, we transform your imagination into reality through innovative 3D printing solutions. From personalized avatars and keychains to gifts, lithophanes and home décor, every product is crafted with creativity, precision and attention to detail.
 </div>
 
 </section>
@@ -231,22 +224,22 @@ At Arnav Layer Tech 3D, we specialize in creating unique and customized 3D print
 
 <div class="card">
 <h3>🎭 3D Avatars</h3>
-<p>Custom-designed avatars and miniature figures created from your ideas and photos.</p>
+<p>Custom avatars and miniatures based on your ideas and photos.</p>
 </div>
 
 <div class="card">
 <h3>🔑 Personalized Keychains</h3>
-<p>Creative keychains featuring names, logos, avatars, and unique designs.</p>
+<p>Creative keychains featuring names, logos and custom designs.</p>
 </div>
 
 <div class="card">
 <h3>🎁 Customized Gifts</h3>
-<p>Perfect personalized gifts for birthdays, anniversaries, and special occasions.</p>
+<p>Unique gifts for birthdays, anniversaries and special occasions.</p>
 </div>
 
 <div class="card">
 <h3>🏠 Home Décor</h3>
-<p>Modern decorative items, lithophanes, planters, and custom display pieces.</p>
+<p>Modern decorative items and customized display pieces.</p>
 </div>
 
 </div>
@@ -255,37 +248,37 @@ At Arnav Layer Tech 3D, we specialize in creating unique and customized 3D print
 
 <section class="section">
 
-<h2>Our Artwork</h2>
+<h2>Our Artwork Gallery</h2>
 
 <div class="gallery">
 
 <div class="gallery-item">
-<img src="avatar.jpg" alt="">
+<img src="Personalised%20Avtar.jpeg" alt="Avatar">
 <h3>3D Avatar</h3>
 </div>
 
 <div class="gallery-item">
-<img src="gift.jpg" alt="">
+<img src="Personalised%20Avtar%20Gift.jpeg" alt="Gift">
 <h3>Personalized Gift</h3>
 </div>
 
 <div class="gallery-item">
-<img src="keychain.jpg" alt="">
+<img src="Custom%20Keychains.jpeg" alt="Keychain">
 <h3>Custom Keychain</h3>
 </div>
 
 <div class="gallery-item">
-<img src="decor.jpg" alt="">
+<img src="Home%20Decor%20Plant%20Pot.jpeg" alt="Decor">
 <h3>Home Décor</h3>
 </div>
 
 <div class="gallery-item">
-<img src="lithophane.jpg" alt="">
+<img src="Lithophane.jpeg" alt="Lithophane">
 <h3>Lithophane Art</h3>
 </div>
 
 <div class="gallery-item">
-<img src="avatar2.jpg" alt="">
+<img src="Personalised%20Avtar%20Gifts.jpeg" alt="Avatar Gift">
 <h3>Premium Avatar Design</h3>
 </div>
 
@@ -318,7 +311,7 @@ At Arnav Layer Tech 3D, we specialize in creating unique and customized 3D print
 © 2026 Arnav Layer Tech 3D | Customize Anything You Imagine
 </footer>
 
-<a href="https://wa.me/918375869076" class="whatsapp-float" target="_blank">
+<a class="whatsapp-float" href="https://wa.me/918375869076">
 💬
 </a>
 
