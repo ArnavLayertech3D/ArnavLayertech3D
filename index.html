@@ -17,101 +17,95 @@ scroll-behavior:smooth;
 
 body{
 background:#f4f6f9;
-color:#222;
+color:#333;
+line-height:1.6;
 }
 
-/* HERO SECTION */
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#111827;
+padding:15px 0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#60a5fa;
+}
+
+/* HERO */
 
 .hero{
-background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
-color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:80px 20px;
-position:relative;
-overflow:hidden;
+padding:100px 20px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+color:white;
+}
+
+.logo-container{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-bottom:20px;
 }
 
 .logo{
 width:220px;
 height:220px;
-object-fit:cover;
 border-radius:50%;
+object-fit:cover;
 background:white;
-padding:4px;
-border:2px solid rgba(255,255,255,.8);
-box-shadow:
-0 0 15px rgba(255,255,255,.4),
-0 0 35px rgba(59,130,246,.6);
-margin-bottom:25px;
-position:relative;
-z-index:2;
-transition:0.3s;
+padding:5px;
+box-shadow:0 0 20px rgba(255,255,255,.5);
 }
 
-.logo:hover{
-transform:scale(1.05);
+.hero h1{
+font-size:4rem;
+margin-bottom:15px;
 }
 
 .hero p{
-max-width:850px;
-margin:auto;
-font-size:1.25rem;
-line-height:1.8;
-margin-bottom:30px;
+font-size:1.2rem;
+max-width:700px;
 }
-
-/* Floating Graphics */
-
-.hero-graphics{
-position:absolute;
-inset:0;
-pointer-events:none;
-}
-
-.graphic{
-position:absolute;
-font-size:55px;
-opacity:.18;
-animation:float 6s ease-in-out infinite;
-}
-
-.g1{top:10%;left:8%;}
-.g2{top:12%;right:8%;}
-.g3{top:45%;left:5%;}
-.g4{top:45%;right:5%;}
-.g5{bottom:15%;left:12%;}
-.g6{bottom:15%;right:12%;}
-.g7{top:18%;left:28%;}
-.g8{top:18%;right:28%;}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-}
-
-/* BUTTONS */
 
 .btn{
 display:inline-block;
-padding:14px 30px;
-margin:10px;
-border-radius:10px;
+margin-top:30px;
+padding:14px 28px;
+background:white;
+color:#2563eb;
 text-decoration:none;
 font-weight:bold;
-color:white;
+border-radius:50px;
 transition:.3s;
 }
 
 .btn:hover{
 transform:translateY(-3px);
-}
-
-.whatsapp{
-background:#25D366;
-}
-
-.instagram{
-background:#E1306C;
 }
 
 /* SECTIONS */
@@ -120,26 +114,18 @@ background:#E1306C;
 padding:80px 20px;
 max-width:1200px;
 margin:auto;
+text-align:center;
 }
 
 .section h2{
-text-align:center;
-font-size:2.8rem;
-margin-bottom:35px;
-color:#071330;
-}
-
-.about{
-text-align:center;
-font-size:18px;
-line-height:1.9;
-max-width:900px;
-margin:auto;
+font-size:2.5rem;
+margin-bottom:20px;
+color:#1e3a8a;
 }
 
 /* SERVICES */
 
-.services{
+.cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
@@ -150,81 +136,112 @@ margin-top:40px;
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
 }
 
-.card h3{
-margin-bottom:12px;
-color:#1e3a8a;
+.card:hover{
+transform:translateY(-5px);
 }
 
 /* GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
-.gallery-item{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-.gallery-item img{
+.gallery img{
 width:100%;
-height:320px;
+height:250px;
 object-fit:cover;
-display:block;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-.gallery-item h3{
-padding:15px;
-text-align:center;
+/* REVIEWS */
+
+.reviews-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.review-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.review-card:hover{
+transform:translateY(-5px);
+transition:.3s;
+}
+
+/* FAQ */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+margin-top:30px;
+}
+
+.faq-item{
+background:white;
+padding:20px;
+margin-bottom:15px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+text-align:left;
+}
+
+.faq-item h3{
+color:#2563eb;
+margin-bottom:10px;
 }
 
 /* CONTACT */
 
-.contact{
-background:#071330;
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-.contact a{
-color:white;
-text-decoration:none;
+.contact-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+max-width:700px;
+margin:auto;
 }
 
 /* FOOTER */
 
 footer{
-background:#020617;
+background:#111827;
 color:white;
-text-align:center;
 padding:20px;
+text-align:center;
 }
 
-/* FLOATING WHATSAPP */
+/* WHATSAPP */
 
-.whatsapp-float{
+.whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-font-size:24px;
-padding:15px 18px;
+font-size:28px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
 border-radius:50%;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
+box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -233,178 +250,177 @@ font-size:2.5rem;
 }
 
 .logo{
-width:220px;
-height:220px;
-object-fit:cover;
-border-radius:50%;
-background:white;
-padding:4px;
-border:2px solid rgba(255,255,255,.8);
-box-shadow:
-0 0 15px rgba(255,255,255,.4),
-0 0 35px rgba(59,130,246,.6);
-margin-bottom:25px;
-position:relative;
-z-index:2;
-transition:0.3s;
+width:160px;
+height:160px;
 }
 
-.logo:hover{
-transform:scale(1.05);
-}
-
-.graphic{
-font-size:35px;
-}
 }
 
 </style>
 </head>
-
 <body>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
 <section class="hero">
 
-<div class="hero-graphics">
-<div class="graphic g1">🖨️</div>
-<div class="graphic g2">🎭</div>
-<div class="graphic g3">🔑</div>
-<div class="graphic g4">🏠</div>
-<div class="graphic g5">🎁</div>
-<div class="graphic g6">💡</div>
-<div class="graphic g7">⚙️</div>
-<div class="graphic g8">🧩</div>
-</div>
-
 <div class="logo-container">
-<img src="logo.jpeg" alt="Arnav Layer Tech 3D Logo" class="logo">
+<img src="logo.jpeg" alt="Arnav Layer Tech 3D" class="logo">
 </div>
 
 <h1>Arnav Layer Tech 3D</h1>
 
 <p>
-Customize Anything You Imagine. We create premium 3D printed avatars,
-personalized gifts, custom keychains, lithophanes and unique home décor products.
+Customize Anything You Imagine
 </p>
 
-<a href="https://wa.me/918375869076" class="btn whatsapp">
-📱 Order on WhatsApp
-</a>
-
-<a href="https://www.instagram.com/arnav_layertech_3d/" class="btn instagram">
-📸 Instagram
-</a>
+<a href="#contact" class="btn">Get Started</a>
 
 </section>
 
-<section class="section">
+<section id="about" class="section">
 
 <h2>About Us</h2>
 
-<div class="about">
-At Arnav Layer Tech 3D, we transform your imagination into reality through innovative 3D printing solutions. From personalized avatars and keychains to gifts, lithophanes and home décor, every product is crafted with creativity, precision and attention to detail.
-</div>
+<p>
+Arnav Layer Tech 3D specializes in high-quality 3D printing solutions including personalized gifts, custom keychains, lithophanes, home décor items, and realistic 3D avatars. We transform your imagination into reality using advanced 3D printing technology.
+</p>
 
 </section>
 
-<section class="section">
+<section id="services" class="section">
 
 <h2>Our Services</h2>
 
-<div class="services">
+<div class="cards">
 
 <div class="card">
-<h3>🎭 3D Avatars</h3>
-<p>Custom avatars and miniatures based on your photos and ideas.</p>
+<h3>3D Avatars</h3>
+<p>Personalized miniatures and figurines.</p>
 </div>
 
 <div class="card">
-<h3>🔑 Personalized Keychains</h3>
-<p>Creative keychains featuring names, logos and custom designs.</p>
+<h3>Custom Keychains</h3>
+<p>Unique keychains with names and logos.</p>
 </div>
 
 <div class="card">
-<h3>🎁 Customized Gifts</h3>
-<p>Unique gifts for birthdays, anniversaries and special occasions.</p>
+<h3>Lithophanes</h3>
+<p>Beautiful photo-based 3D printed art.</p>
 </div>
 
 <div class="card">
-<h3>🏠 Home Décor</h3>
-<p>Modern decorative items and customized display pieces.</p>
+<h3>Home Décor</h3>
+<p>Creative and modern decorative products.</p>
+</div>
+
+<div class="card">
+<h3>Personalized Gifts</h3>
+<p>Custom gifts for every occasion.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
+<section id="gallery" class="section">
 
-<h2>Our Artwork Gallery</h2>
+<h2>Product Gallery</h2>
 
 <div class="gallery">
 
-<div class="gallery-item">
-<img src="Personalised Avtar.jpeg" alt="">
-<h3>3D Avatar</h3>
+<img src="https://images.unsplash.com/photo-1581092919535-7146ff1a590d?w=800" alt="">
+<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800" alt="">
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800" alt="">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800" alt="">
+
 </div>
 
-<div class="gallery-item">
-<img src="Personalised Avtar Gift.jpeg" alt="">
-<h3>Personalized Gift</h3>
+</section>
+
+<section id="reviews" class="section">
+
+<h2>Customer Reviews</h2>
+
+<div class="reviews-container">
+
+<div class="review-card">
+<p>"Loved the detailing and quality!"</p>
+<h4>⭐⭐⭐⭐⭐</h4>
 </div>
 
-<div class="gallery-item">
-<img src="Custom Keychains.jpeg" alt="">
-<h3>Custom Keychain</h3>
+<div class="review-card">
+<p>"Perfect personalized gift experience."</p>
+<h4>⭐⭐⭐⭐⭐</h4>
 </div>
 
-<div class="gallery-item">
-<img src="Home Decor Plant Pot.jpeg" alt="">
-<h3>Home Décor</h3>
-</div>
-
-<div class="gallery-item">
-<img src="Lithophane.jpeg" alt="">
-<h3>Lithophane Art</h3>
-</div>
-
-<div class="gallery-item">
-<img src="Personalised Avtar Gifts.jpeg" alt="">
-<h3>Premium Avatar Design</h3>
+<div class="review-card">
+<p>"Fast service and great finishing."</p>
+<h4>⭐⭐⭐⭐⭐</h4>
 </div>
 
 </div>
 
 </section>
 
-<section class="contact">
+<section id="faq" class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<h3>Q: How long does delivery take?</h3>
+<p>A: Usually 3–7 business days.</p>
+</div>
+
+<div class="faq-item">
+<h3>Q: Can I customize designs?</h3>
+<p>A: Yes, every order is personalized.</p>
+</div>
+
+<div class="faq-item">
+<h3>Q: Do you ship across India?</h3>
+<p>A: Yes.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="section">
 
 <h2>Contact Us</h2>
 
-<p>📞 WhatsApp: +91 8375869076</p>
+<div class="contact-box">
 
-<br>
+<p><strong>WhatsApp:</strong> +91 8375869076</p>
 
 <p>
-📸 Instagram:
-<a href="https://www.instagram.com/arnav_layertech_3d/" target="_blank">
-@arnav_layertech_3d
-</a>
+<strong>Instagram:</strong><br>
+arnav_layertech_3d
 </p>
 
-<br>
-
-<p>🚚 Delivering Across India</p>
+</div>
 
 </section>
 
 <footer>
-© 2026 Arnav Layer Tech 3D | Customize Anything You Imagine
+<p>© 2026 Arnav Layer Tech 3D. All Rights Reserved.</p>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/918375869076">
-💬
-</a>
+<a class="whatsapp"
+href="https://wa.me/918375869076"
+target="_blank">💬</a>
 
 </body>
 </html>
