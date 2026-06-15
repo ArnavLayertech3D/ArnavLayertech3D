@@ -4,30 +4,164 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arnav Layer Tech 3D | Customize Anything You Imagine</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;scroll-behavior:smooth}
 body{background:#f5f7fb;color:#222;line-height:1.6}
-nav{position:fixed;top:0;width:100%;background:#071330;padding:15px;z-index:1000}
-nav ul{display:flex;justify-content:center;gap:25px;list-style:none;flex-wrap:wrap}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:#071330;padding:15px 0;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,.2)}
+nav ul{display:flex;justify-content:center;gap:30px;list-style:none;flex-wrap:wrap}
 nav a{color:#fff;text-decoration:none;font-weight:600}
-.hero{min-height:100vh;background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px}
-.logo{width:200px;height:200px;border-radius:50%;background:#fff;padding:5px}
-.hero h1{font-size:3.5rem;margin:20px 0}
-.btn{padding:12px 25px;border-radius:30px;color:#fff;text-decoration:none;margin:5px;display:inline-block}
-.whatsapp{background:#25D366}.instagram{background:#d946ef}
-.section{max-width:1200px;margin:auto;padding:80px 20px}
-.section h2{text-align:center;margin-bottom:30px;color:#071330}
-.services,.gallery,.reviews-container,.faq-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card,.gallery-item,.review-card,.faq-item{background:#fff;padding:25px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-.gallery-item img{width:100%;height:250px;object-fit:cover;border-radius:12px}
-.review-form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:25px}
-.review-form input,.review-form select,.review-form textarea{padding:12px;border:1px solid #ddd;border-radius:10px}
-.review-form textarea{width:280px;height:80px}
-.review-form button{padding:12px 20px;background:#1e3a8a;color:#fff;border:none;border-radius:10px}
-.contact{background:#071330;color:#fff;text-align:center;padding:70px 20px}
-footer{background:#020617;color:#fff;text-align:center;padding:20px}
-.whatsapp-float{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px}
-@media(max-width:768px){.hero h1{font-size:2.2rem}.logo{width:140px;height:140px}}
+nav a:hover{color:#60a5fa}
+
+/* HERO */
+.hero{
+min-height:100vh;
+background:
+radial-gradient(circle at top right,#3b82f6 0%,transparent 30%),
+radial-gradient(circle at bottom left,#7c3aed 0%,transparent 35%),
+linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;padding:120px 20px;color:white;position:relative;overflow:hidden
+}
+.hero::before{content:"🖨️";position:absolute;top:18%;left:8%;font-size:70px;opacity:.15;animation:float 6s infinite ease-in-out}
+.hero::after{content:"🎭";position:absolute;bottom:20%;right:8%;font-size:70px;opacity:.15;animation:float 8s infinite ease-in-out}
+.floating{position:absolute;font-size:50px;opacity:.12;animation:float 7s infinite ease-in-out}
+.f1{top:15%;right:15%}.f2{bottom:18%;left:15%}.f3{top:50%;left:5%}.f4{top:45%;right:5%}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-25px)}}
+
+.logo{
+width:220px;height:220px;border-radius:50%;object-fit:cover;background:white;
+padding:5px;border:3px solid rgba(255,255,255,.8);
+box-shadow:0 0 20px rgba(255,255,255,.5),0 0 60px rgba(59,130,246,.8);
+animation:logoFloat 5s ease-in-out infinite
+}
+@keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.hero h1{font-size:4rem;margin:25px 0 15px}
+.hero p{max-width:850px;font-size:1.2rem;margin-bottom:30px}
+
+.btn{display:inline-block;padding:14px 30px;margin:8px;border-radius:50px;text-decoration:none;font-weight:bold;color:white;transition:.3s}
+.btn:hover{transform:translateY(-4px)}
+.whatsapp{background:#25D366}
+.instagram{background:linear-gradient(90deg,#a855f7,#ec4899)}
+
+.section{max-width:1200px;margin:auto;padding:90px 20px}
+.section h2{text-align:center;font-size:2.8rem;margin-bottom:40px;color:#071330}
+.about{text-align:center;max-width:900px;margin:auto}
+
+.services,.reviews-container,.faq-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px
+}
+
+.card,.review-card,.faq-item{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.4s;
+text-align:center
+}
+
+.card:hover,.review-card:hover,.faq-item:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(59,130,246,.15)
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px
+}
+.gallery-item{
+background:white;border-radius:20px;overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.08);transition:.4s
+}
+.gallery-item:hover{transform:translateY(-10px)}
+.gallery-item img{width:100%;height:300px;object-fit:cover}
+.gallery-item h3{padding:15px;text-align:center}
+
+/* UPGRADED REVIEW FORM */
+.feedback-box{
+max-width:900px;
+margin:0 auto 40px;
+display:flex;
+gap:15px;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap
+}
+
+.feedback-box input,
+.feedback-box select,
+.feedback-box textarea{
+padding:14px 18px;
+border:none;
+border-radius:12px;
+background:white;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+font-size:15px;
+outline:none;
+transition:.3s
+}
+
+.feedback-box input{width:220px}
+.feedback-box select{width:180px}
+.feedback-box textarea{width:320px;height:55px;resize:none}
+
+.feedback-box input:focus,
+.feedback-box select:focus,
+.feedback-box textarea:focus{
+box-shadow:0 0 0 3px rgba(59,130,246,.25);
+transform:translateY(-2px)
+}
+
+.feedback-box button{
+padding:14px 22px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+font-weight:600;
+cursor:pointer
+}
+
+/* FAQ */
+.faq-item h3{color:#1e3a8a;margin-bottom:12px}
+
+/* CONTACT */
+.contact{
+background:#020b4f;
+color:white;
+text-align:center;
+padding:70px 20px
+}
+
+footer{
+background:#00092e;
+color:white;
+text-align:center;
+padding:20px
+}
+
+.whatsapp-float{
+position:fixed;bottom:20px;right:20px;width:60px;height:60px;
+display:flex;justify-content:center;align-items:center;border-radius:50%;
+background:#25D366;color:white;font-size:28px;text-decoration:none
+}
+
+@media(max-width:768px){
+.hero h1{font-size:2.5rem}
+.logo{width:150px;height:150px}
+.feedback-box{flex-direction:column}
+.feedback-box input,.feedback-box select,.feedback-box textarea,.feedback-box button{
+width:100%;max-width:400px
+}
+.feedback-box textarea{height:100px}
+}
 </style>
 </head>
 <body>
@@ -44,29 +178,32 @@ footer{background:#020617;color:#fff;text-align:center;padding:20px}
 </nav>
 
 <section class="hero">
-<img src="logo.jpeg" class="logo" alt="Logo">
+<div class="floating f1">🔑</div>
+<div class="floating f2">🎁</div>
+<div class="floating f3">⚙️</div>
+<div class="floating f4">🏠</div>
+
+<img src="logo.jpeg" alt="Logo" class="logo">
+
 <h1>Arnav Layer Tech 3D</h1>
-<p>Customize Anything You Imagine – Premium 3D Printed Avatars, Keychains, Lithophanes, Gifts & Home Décor.</p>
-<div>
-<a href="https://wa.me/918375869076" class="btn whatsapp">WhatsApp Order</a>
+<p>Customize Anything You Imagine. Premium 3D printed avatars, custom keychains, lithophanes, personalized gifts and home décor products.</p>
+
+<a href="https://wa.me/918375869076" class="btn whatsapp">Order on WhatsApp</a>
 <a href="https://www.instagram.com/arnav_layertech_3d/" class="btn instagram">Instagram</a>
-</div>
 </section>
 
 <section id="about" class="section">
 <h2>About Us</h2>
-<p style="text-align:center;max-width:900px;margin:auto">
-At Arnav Layer Tech 3D, we transform imagination into reality through innovative 3D printing solutions crafted with precision and creativity.
-</p>
+<div class="about">At Arnav Layer Tech 3D, we transform imagination into reality through innovative 3D printing solutions.</div>
 </section>
 
 <section id="services" class="section">
 <h2>Our Services</h2>
 <div class="services">
-<div class="card"><h3>🎭 3D Avatars</h3><p>Custom figurines and avatars.</p></div>
-<div class="card"><h3>🔑 Keychains</h3><p>Names, logos and custom designs.</p></div>
-<div class="card"><h3>🖼️ Lithophanes</h3><p>Photo-based illuminated artwork.</p></div>
-<div class="card"><h3>🎁 Gifts</h3><p>Personalized gifts for every occasion.</p></div>
+<div class="card"><h3>🎭 3D Avatars</h3></div>
+<div class="card"><h3>🔑 Custom Keychains</h3></div>
+<div class="card"><h3>🖼️ Lithophanes</h3></div>
+<div class="card"><h3>🎁 Personalized Gifts</h3></div>
 </div>
 </section>
 
@@ -74,74 +211,55 @@ At Arnav Layer Tech 3D, we transform imagination into reality through innovative
 <h2>Product Gallery</h2>
 <div class="gallery">
 <div class="gallery-item"><img src="Personalised Avtar.jpeg"><h3>3D Avatar</h3></div>
-<div class="gallery-item"><img src="Custom Keychains.jpeg"><h3>Keychains</h3></div>
-<div class="gallery-item"><img src="Lithophane.jpeg"><h3>Lithophane</h3></div>
-<div class="gallery-item"><img src="Personalised Avtar Gift.jpeg"><h3>Gift</h3></div>
+<div class="gallery-item"><img src="Custom Keychains.jpeg"><h3>Custom Keychain</h3></div>
+<div class="gallery-item"><img src="Lithophane.jpeg"><h3>Lithophane Art</h3></div>
+<div class="gallery-item"><img src="Personalised Avtar Gift.jpeg"><h3>Personalized Gift</h3></div>
 <div class="gallery-item"><img src="Home Decor Plant Pot.jpeg"><h3>Home Décor</h3></div>
-<div class="gallery-item"><img src="Personalised Avtar Gifts.jpeg"><h3>Premium Design</h3></div>
+<div class="gallery-item"><img src="Personalised Avtar Gifts.jpeg"><h3>Premium Avatar Design</h3></div>
 </div>
 </section>
 
 <section id="reviews" class="section">
 <h2>Customer Reviews</h2>
-<div class="review-form">
-<input id="customerName" placeholder="Your Name">
-<select id="customerRating">
-<option value="">Rating</option>
-<option>⭐⭐⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐</option>
+
+<div class="feedback-box">
+<input type="text" placeholder="Your Name">
+<select>
+<option>Select Rating</option>
+<option>⭐⭐⭐⭐⭐ Excellent</option>
+<option>⭐⭐⭐⭐ Very Good</option>
+<option>⭐⭐⭐ Good</option>
 </select>
-<textarea id="customerReview" placeholder="Your review"></textarea>
-<button onclick="submitReview()">Submit</button>
+<textarea placeholder="Share your experience with us..."></textarea>
+<button>Submit Review</button>
 </div>
-<div id="reviewsContainer" class="reviews-container">
-<div class="review-card"><p>Excellent quality!</p><h4>Rahul</h4><p>⭐⭐⭐⭐⭐</p></div>
+
+<div class="reviews-container">
+<div class="review-card"><p>"Loved the detailing and quality!"</p><h4>Rahul Sharma</h4><p>⭐⭐⭐⭐⭐</p></div>
+<div class="review-card"><p>"Perfect personalized gift experience."</p><h4>Priya Verma</h4><p>⭐⭐⭐⭐⭐</p></div>
+<div class="review-card"><p>"Fast service and great finishing."</p><h4>Amit Kumar</h4><p>⭐⭐⭐⭐⭐</p></div>
 </div>
 </section>
 
 <section id="faq" class="section">
-<h2>FAQ</h2>
+<h2>Frequently Asked Questions</h2>
 <div class="faq-container">
-<div class="faq-item"><h3>Delivery Time?</h3><p>3-7 business days.</p></div>
-<div class="faq-item"><h3>Custom Designs?</h3><p>Yes, fully customizable.</p></div>
-<div class="faq-item"><h3>Pan India Shipping?</h3><p>Yes.</p></div>
+<div class="faq-item"><h3>How long does delivery take?</h3><p>Usually 3–7 business days.</p></div>
+<div class="faq-item"><h3>Can I customize designs?</h3><p>Yes, every order is personalized.</p></div>
+<div class="faq-item"><h3>Do you ship across India?</h3><p>Yes, we deliver across India.</p></div>
 </div>
 </section>
 
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
-<p>WhatsApp: +91 8375869076</p>
-<p>Instagram: @arnav_layertech_3d</p>
+<p>📞 WhatsApp: +91 8375869076</p>
+<p>📸 Instagram: @arnav_layertech_3d</p>
+<p>🚚 Delivering Across India</p>
 </section>
 
 <footer>© 2026 Arnav Layer Tech 3D. All Rights Reserved.</footer>
 
 <a href="https://wa.me/918375869076" class="whatsapp-float">💬</a>
 
-<script>
-const reviewsContainer=document.getElementById("reviewsContainer");
-window.onload=function(){
-let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
-reviews.forEach(r=>{
-let c=document.createElement("div");
-c.className="review-card";
-c.innerHTML=`<p>${r.review}</p><h4>${r.name}</h4><p>${r.rating}</p>`;
-reviewsContainer.prepend(c);
-});
-}
-function submitReview(){
-let name=customerName.value.trim();
-let review=customerReview.value.trim();
-let rating=customerRating.value;
-if(!name||!review||!rating){alert("Fill all fields");return;}
-let c=document.createElement("div");
-c.className="review-card";
-c.innerHTML=`<p>${review}</p><h4>${name}</h4><p>${rating}</p>`;
-reviewsContainer.prepend(c);
-let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
-reviews.push({name,review,rating});
-localStorage.setItem("reviews",JSON.stringify(reviews));
-customerName.value="";customerReview.value="";customerRating.value="";
-}
-</script>
 </body>
 </html>
