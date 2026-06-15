@@ -498,6 +498,48 @@ At Arnav Layer Tech 3D, we transform imagination into reality through innovative
 © 2026 Arnav Layer Tech 3D. All Rights Reserved.
 </footer>
 
+<script>
+
+function submitReview(){
+
+let name =
+document.getElementById("customerName").value.trim();
+
+let review =
+document.getElementById("customerReview").value.trim();
+
+let rating =
+document.getElementById("customerRating").value;
+
+if(name === "" || review === "" || rating === ""){
+alert("Please fill all fields.");
+return;
+}
+
+let reviewCard = document.createElement("div");
+
+reviewCard.className = "review-card";
+
+reviewCard.innerHTML = `
+<p>"${review}"</p>
+<h4>${name}</h4>
+<p>${rating}</p>
+`;
+
+document
+.getElementById("reviewsContainer")
+.prepend(reviewCard);
+
+document.getElementById("customerName").value = "";
+document.getElementById("customerReview").value = "";
+document.getElementById("customerRating").value = "";
+
+alert("Thank you for your feedback!");
+
+}
+
+</script>
+  
 <a href="https://wa.me/918375869076" class="whatsapp-float">💬</a>
 
 </body>
